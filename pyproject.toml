@@ -1,0 +1,42 @@
+[project]
+name = "python-template"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "yusephbarghash", email = "usephab99@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+python-template = "python_template:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.3.1",
+    "ruff>=0.16.7",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes (unused imports, undefined names)
+    "I",   # import sorting
+    "B",   # bugbear (common bugs)
+    "UP",  # pyupgrade (modern Python syntax)
+    "SIM", # simplify code
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
